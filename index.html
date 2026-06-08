@@ -23,7 +23,7 @@ animation:move 20s linear infinite}
 @keyframes move{from{transform:translateY(0)}to{transform:translateY(100px)}}
 .hero-content{position:relative;z-index:2;max-width:1000px;padding:20px}
 .hero h1{font-size:5rem;font-weight:800}
-.role{font-size:2rem;color:#60a5fa;margin:20px 0}
+.role{font-size:2rem;color:#60a5fa;margin:20px 0;min-height:50px}
 .hero p{font-size:1.2rem;max-width:900px;margin:auto}
 .btn{display:inline-block;margin:12px;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700}
 .primary{background:#2563eb;color:#fff}
@@ -171,11 +171,22 @@ nav ul{gap:15px;font-size:.9rem;flex-wrap:wrap}
 
 <script>
 const roles=["Senior Service Engineer","Diesel Engine Expert","Earthmoving Equipment Specialist","Field Service Professional","Technical Mentor"];
-let i=0;
-setInterval(()=>{
-document.getElementById("role").textContent=roles[i];
-i=(i+1)%roles.length;
-},2500);
+const roleEl=document.getElementById("role");
+let roleIndex=0,charIndex=0,deleting=false;
+function typeRole(){
+const current=roles[roleIndex];
+if(!deleting){
+roleEl.textContent=current.substring(0,charIndex+1);
+charIndex++;
+if(charIndex===current.length){deleting=true;setTimeout(typeRole,1500);return;}
+}else{
+roleEl.textContent=current.substring(0,charIndex-1);
+charIndex--;
+if(charIndex===0){deleting=false;roleIndex=(roleIndex+1)%roles.length;}
+}
+setTimeout(typeRole,deleting?50:100);
+}
+typeRole();
 
 document.querySelectorAll('.num').forEach(el=>{
 let target=+el.dataset.target;

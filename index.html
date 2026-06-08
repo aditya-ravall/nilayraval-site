@@ -50,6 +50,30 @@ footer{text-align:center;padding:30px;background:#0f172a}
 .role{font-size:1.2rem}
 nav ul{gap:15px;font-size:.9rem;flex-wrap:wrap}
 }
+
+/* Hero particles preview */
+.hero-particles{
+position:absolute;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+}
+.hero-particles span{
+position:absolute;
+display:block;
+width:4px;
+height:4px;
+border-radius:50%;
+background:rgba(96,165,250,.7);
+animation:floatParticle linear infinite;
+}
+@keyframes floatParticle{
+0%{transform:translateY(100vh);opacity:0}
+10%{opacity:1}
+90%{opacity:1}
+100%{transform:translateY(-20vh);opacity:0}
+}
+
 </style>
 </head>
 <body>
@@ -66,6 +90,7 @@ nav ul{gap:15px;font-size:.9rem;flex-wrap:wrap}
 </nav>
 
 <section id="home" class="hero">
+<div class="hero-particles"><span style="left:0%;animation-duration:12s;animation-delay:-0s"></span><span style="left:7%;animation-duration:13s;animation-delay:-1s"></span><span style="left:14%;animation-duration:14s;animation-delay:-2s"></span><span style="left:21%;animation-duration:15s;animation-delay:-3s"></span><span style="left:28%;animation-duration:16s;animation-delay:-4s"></span><span style="left:35%;animation-duration:17s;animation-delay:-5s"></span><span style="left:42%;animation-duration:18s;animation-delay:-6s"></span><span style="left:49%;animation-duration:19s;animation-delay:-7s"></span><span style="left:56%;animation-duration:20s;animation-delay:-8s"></span><span style="left:63%;animation-duration:21s;animation-delay:-9s"></span><span style="left:70%;animation-duration:12s;animation-delay:-10s"></span><span style="left:77%;animation-duration:13s;animation-delay:-11s"></span><span style="left:84%;animation-duration:14s;animation-delay:-12s"></span><span style="left:91%;animation-duration:15s;animation-delay:-13s"></span><span style="left:98%;animation-duration:16s;animation-delay:-14s"></span><span style="left:5%;animation-duration:17s;animation-delay:-15s"></span><span style="left:12%;animation-duration:18s;animation-delay:-16s"></span><span style="left:19%;animation-duration:19s;animation-delay:-17s"></span><span style="left:26%;animation-duration:20s;animation-delay:-18s"></span><span style="left:33%;animation-duration:21s;animation-delay:-19s"></span><span style="left:40%;animation-duration:12s;animation-delay:-20s"></span><span style="left:47%;animation-duration:13s;animation-delay:-21s"></span><span style="left:54%;animation-duration:14s;animation-delay:-22s"></span><span style="left:61%;animation-duration:15s;animation-delay:-23s"></span><span style="left:68%;animation-duration:16s;animation-delay:-24s"></span><span style="left:75%;animation-duration:17s;animation-delay:-25s"></span><span style="left:82%;animation-duration:18s;animation-delay:-26s"></span><span style="left:89%;animation-duration:19s;animation-delay:-27s"></span><span style="left:96%;animation-duration:20s;animation-delay:-28s"></span><span style="left:3%;animation-duration:21s;animation-delay:-29s"></span></div>
 <div class="hero-content">
 <h1>Nilay Raval</h1>
 <div class="role" id="role">Senior Service Engineer</div>
